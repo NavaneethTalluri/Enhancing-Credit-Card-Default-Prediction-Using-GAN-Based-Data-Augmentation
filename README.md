@@ -111,6 +111,7 @@ This project is released under the MIT License.
 credit_default_prediction/
 │
 ├── Data_Science_Project_23102357.ipynb     # Main Jupyter Notebook (model training, EDA & results)
+├── LICENSE
 ├── README.md                               # Project summary and documentation
 ├── combined_model_results.csv              # Model performance comparison table
 ├── ctgan_model.pkl                         # Saved CTGAN model for synthetic data generation
