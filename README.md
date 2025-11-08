@@ -106,15 +106,14 @@ This project is released under the MIT License.
 ```
 credit_default_prediction/
 │
-├── notebook.ipynb                  # Main analysis and modeling notebook
-├── README.md                       # Project summary and documentation
-├── requirements.txt                # Python dependencies
-├── combined_model_results.csv       # Model comparison results
-├── images/
-│   ├── roc_comparison_original.png
-│   ├── roc_comparison_smote.png
-│   └── roc_comparison_gan.png
-└── data/
-    └── sample_data.csv (optional small data sample)
+├── Data_Science_Project_23102357.ipynb     # Main Jupyter Notebook (model training, EDA & results)
+├── README.md                               # Project summary and documentation
+├── combined_model_results.csv              # Model performance comparison table
+├── ctgan_model.pkl                         # Saved CTGAN model for synthetic data generation
+├── default of credit card clients.xls      # Original dataset (UCI source)
+├── requirements.txt                        # Python dependencies for reproducibility
+├── roc_comparison_original.png             # ROC curve for Original dataset
+├── roc_comparison_smote.png                # ROC curve for SMOTE dataset
+└── roc_comparison_gan.png                  
 
 ```
