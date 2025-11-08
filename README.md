@@ -96,4 +96,18 @@ Each ROC curve demonstrates that tree-based ensemble models outperform linear cl
 - Balancing methods improve fairness and recall for defaulters while maintaining generalization.  
 
 
-## 📁 Project Structure
+## Project Structure
+
+credit_default_prediction/
+│
+├── notebook.ipynb                  # Main analysis and modeling notebook
+├── README.md                       # Project summary and documentation
+├── requirements.txt                # Python dependencies
+├── combined_model_results.csv       # Model comparison results
+├── images/
+│   ├── roc_comparison_original.png
+│   ├── roc_comparison_smote.png
+│   └── roc_comparison_gan.png
+└── data/
+    └── sample_data.csv 
+
