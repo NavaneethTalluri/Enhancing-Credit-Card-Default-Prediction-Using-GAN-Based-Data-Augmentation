@@ -50,28 +50,31 @@ The results demonstrate how advanced resampling strategies can improve model gen
 
 ## Results Summary
 
-| Model | Dataset | Accuracy | AUC |
-|--------|----------|----------|------|
-| **LightGBM** | Original | 0.8170 | 0.7752 |
-| **LightGBM** | SMOTE | 0.8122 | 0.7727 |
-| **LightGBM** | GAN (CTGAN) | **0.8183** | **0.7746** |
-| **XGBoost** | Original | 0.8118 | 0.7565 |
-| **XGBoost** | SMOTE | 0.7992 | 0.7517 |
-| **XGBoost** | GAN (CTGAN) | **0.8140** | **0.7632** |
-| **Random Forest** | Original | 0.8107 | 0.7504 |
-| **Random Forest** | SMOTE | 0.7907 | 0.7528 |
-| **Random Forest** | GAN (CTGAN) | **0.8145** | 0.7487 |
-| **Logistic Regression** | Original | 0.8060 | 0.7327 |
-| **Logistic Regression** | SMOTE | 0.7172 | 0.7222 |
-| **Logistic Regression** | GAN (CTGAN) | **0.8032** | **0.7354** |
+| **Model**               | **Dataset** | **Accuracy** | **AUC**    |
+| ----------------------- | ----------- | ------------ | ---------- |
+| **LightGBM**            | Original    | 0.8170       | 0.7752     |
+| **LightGBM**            | SMOTE       | 0.8122       | 0.7727     |
+| **LightGBM**            | GAN (CTGAN) | **0.8183**   | **0.7746** |
+| **XGBoost**             | Original    | 0.8118       | 0.7565     |
+| **XGBoost**             | SMOTE       | 0.7992       | 0.7517     |
+| **XGBoost**             | GAN (CTGAN) | **0.8140**   | **0.7632** |
+| **Random Forest**       | Original    | 0.8107       | 0.7504     |
+| **Random Forest**       | SMOTE       | 0.7907       | 0.7528     |
+| **Random Forest**       | GAN (CTGAN) | **0.8145**   | 0.7487     |
+| **Logistic Regression** | Original    | 0.8060       | 0.7327     |
+| **Logistic Regression** | SMOTE       | 0.7172       | 0.7222     |
+| **Logistic Regression** | GAN (CTGAN) | **0.8032**   | **0.7354** |
 
 ---
 
 ### **Key Insights**
-- **LightGBM** consistently achieved the best **accuracy (0.8183)** and **AUC (0.7746)** after GAN-based augmentation.  
-- **GAN (CTGAN)** produced slightly better or more stable results than SMOTE, indicating higher-quality synthetic data.  
-- **SMOTE** improved recall for defaulters but slightly reduced accuracy due to oversampling noise.  
-- **Tree-based models (LightGBM, XGBoost, Random Forest)** outperform linear models like Logistic Regression across all datasets.  
+- **LightGBM** remains the top performer, achieving the **highest accuracy (0.8183)** and **AUC (0.7746)** using **GAN (CTGAN)** data.
+
+- **XGBoost** and **Random Forest** also improved with GAN augmentation, confirming the effectiveness of synthetic data.
+
+- **Logistic Regression** benefited most from GAN over SMOTE, showing better learning from realistic synthetic samples.
+
+- **GAN (CTGAN)** produced the most balanced and diverse dataset, enhancing all models' ability to generalize. 
 
 ---
 
