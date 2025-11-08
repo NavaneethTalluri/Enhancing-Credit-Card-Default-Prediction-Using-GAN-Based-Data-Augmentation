@@ -1,6 +1,5 @@
 # Enhancing Credit Card Default Prediction Using GAN Based Data Augmentation
 ---
-
 ## Project Overview
 This project predicts **credit card payment defaults** using a range of classical and ensemble machine learning models.  
 It explores the effects of different **data augmentation and balancing techniques** — namely **SMOTE** and **CTGAN (GAN-based synthetic data generation)** — on model accuracy and fairness.  
@@ -12,6 +11,8 @@ The results demonstrate how advanced resampling strategies can improve model gen
 - **Source:** [UCI Default of Credit Card Clients Dataset](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients)  
 - **Size:** 30,000 clients × 24 features  
 - **Target Variable:** `default payment next month` (1 = Default, 0 = No Default)
+
+---
 
 **Key Features:**
 - Demographic data (age, gender, education, marital status)  
