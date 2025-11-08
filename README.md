@@ -50,12 +50,20 @@ The results demonstrate how advanced resampling strategies can improve model gen
 
 ## Results Summary
 
-| **Model**               | **Original (AUC)** | **SMOTE (AUC)** | **GAN (CTGAN) (AUC)** | **Best Accuracy** | **Best AUC** |
-| ----------------------- | ------------------ | --------------- | --------------------- | ----------------: | -----------: |
-| **LightGBM**            | 0.7752             | 0.7727          | **0.7723**            |        **0.8185** |   **0.7723** |
-| **XGBoost**             | 0.7565             | 0.7517          | **0.7604**            |            0.8118 |       0.7604 |
-| **Random Forest**       | 0.7504             | 0.7528          | **0.7516**            |            0.8138 |       0.7516 |
-| **Logistic Regression** | 0.7327             | 0.7222          | **0.7353**            |            0.8035 |       0.7353 |
+| **Model**               | **Dataset** | **Accuracy** | **AUC**    |
+| ----------------------- | ----------- | ------------ | ---------- |
+| **LightGBM**            | Original    | 0.8170       | **0.7752** |
+| **LightGBM**            | SMOTE       | 0.8122       | 0.7727     |
+| **LightGBM**            | GAN (CTGAN) | **0.8185**   | 0.7723     |
+| **XGBoost**             | Original    | 0.8118       | 0.7565     |
+| **XGBoost**             | SMOTE       | 0.7992       | 0.7517     |
+| **XGBoost**             | GAN (CTGAN) | **0.8118**   | **0.7604** |
+| **Random Forest**       | Original    | 0.8107       | 0.7504     |
+| **Random Forest**       | SMOTE       | 0.7907       | **0.7528** |
+| **Random Forest**       | GAN (CTGAN) | **0.8138**   | 0.7516     |
+| **Logistic Regression** | Original    | 0.8060       | 0.7327     |
+| **Logistic Regression** | SMOTE       | 0.7172       | 0.7222     |
+| **Logistic Regression** | GAN (CTGAN) | **0.8035**   | **0.7353** |
 
 ---
 
