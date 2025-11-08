@@ -93,10 +93,16 @@ Each ROC curve demonstrates that tree-based ensemble models outperform linear cl
 - **CTGAN** creates more realistic synthetic samples than SMOTE, capturing complex relationships in tabular data.  
 - **LightGBM** shows robust performance and scalability for financial risk prediction.  
 - **SMOTE** improves minority detection but may slightly reduce overall accuracy.  
-- Balancing methods improve fairness and recall for defaulters while maintaining generalization.  
+- Balancing methods improve fairness and recall for defaulters while maintaining generalization.
 
+---
 
-## 📁 Project Structure
+## License
+This project is released under the MIT License.
+
+---
+
+## Project Structure
 ```
 credit_default_prediction/
 │
