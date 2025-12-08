@@ -1,9 +1,9 @@
-# Enhancing Credit Card Default Prediction Using GAN Based Data Augmentation
+# Enhancing Credit Card Default Prediction Using GAN-Based Data Augmentation
 ---
 ## Project Overview
 This project predicts **credit card payment defaults** using a range of classical and ensemble machine learning models.  
 It explores the effects of different **data augmentation and balancing techniques** — namely **SMOTE** and **CTGAN (GAN-based synthetic data generation)** — on model accuracy and fairness.  
-The results demonstrate how advanced resampling strategies can improve model generalization when dealing with imbalanced financial datasets.
+The results demonstrate how advanced resampling strategies can improve model generalisation when dealing with imbalanced financial datasets.
 
 ---
 
@@ -17,7 +17,7 @@ The results demonstrate how advanced resampling strategies can improve model gen
 **Key Features:**
 - Demographic data (age, gender, education, marital status)  
 - Credit information (limit balance, payment history, bill amounts)  
-- Past payment behavior (six-month history)
+- Past payment behaviour (six-month history)
 
 ---
 
@@ -28,8 +28,8 @@ The results demonstrate how advanced resampling strategies can improve model gen
    - Applied log and power transformations to reduce skewness  
 
 2. **Exploratory Data Analysis**
-   - Visualized class distribution, education, gender, and delay patterns  
-   - Analyzed correlation and top predictors for default risk  
+   - Visualised class distribution, education, gender, and delay patterns  
+   - Analysed correlation and top predictors for default risk  
 
 3. **Handling Class Imbalance**
    - **Original Dataset:** Highly imbalanced (majority non-defaulters)  
@@ -43,7 +43,11 @@ The results demonstrate how advanced resampling strategies can improve model gen
    - LightGBM  
 
 5. **Evaluation Metrics**
-   - Accuracy  
+   - Accuracy
+   - Precision
+   - Recall
+   - F1-score
+   - AUC
    - ROC-AUC (Receiver Operating Characteristic – Area Under Curve)  
 
 ---
@@ -57,22 +61,12 @@ The results demonstrate how advanced resampling strategies can improve model gen
 | Random Forest          | 0.8107       | 0.6262        | 0.3572     | 0.4549       | 0.7504     |
 | Logistic Regression    | 0.8060       | **0.6601**    | 0.2532     | 0.3660       | 0.7327     |
 
-
----
-
-### **Key Insights**
-
-- **LightGBM** delivered the strongest overall performance, achieving the highest Accuracy **(0.8170)** and AUC **(0.7752)** among all models.
-
-- **XGBoost**, **Random Forest**, and **Logistic Regression** showed slightly lower but comparable results, indicating stable performance across ensemble and linear methods.
-
-- Precision was highest in Logistic Regression **(0.6601)**, suggesting it made more reliable positive predictions despite lower recall.
-
-- Performance differences across models remain moderate, indicating no extreme overfitting or instability; however, LightGBM remains the most effective choice for this dataset.
-
 ---
 
 ## Visual Results
+
+### ROC Curve Comparison  
+![ROC Curves](roc_comparison_original.png)
 
 ### Model Performance on Original Dataset  
 ![Unbalanced Results](model_performance_metrics_unbalanced.png)
@@ -80,18 +74,17 @@ The results demonstrate how advanced resampling strategies can improve model gen
 ### LGBM Performance Across Augmented Datasets  
 ![LGBM Dataset Comparison](lgbm_dataset_performance_comparison.png)
 
-### ROC Curve Comparison  
-![ROC Curves](roc_comparison_original.png)
-
-
 ---
 
 ## Key Insights
 
-- **CTGAN** creates more realistic synthetic samples than SMOTE, capturing complex relationships in tabular data.  
-- **LightGBM** shows robust performance and scalability for financial risk prediction.  
-- **SMOTE** improves minority detection but may slightly reduce overall accuracy.  
-- Balancing methods improve fairness and recall for defaulters while maintaining generalization.
+- CTGAN-generated data provides more realistic synthetic samples than SMOTE, effectively capturing complex feature relationships in tabular credit data.
+
+- LightGBM consistently delivers the strongest overall performance, achieving high accuracy and AUC, making it well-suited for financial risk prediction.
+
+- SMOTE improves the detection of minority classes (defaulters) but may slightly reduce overall model accuracy due to oversampling artefacts.
+
+- Data augmentation and balancing methods enhance fairness and recall for defaulters while maintaining generalisation across models.
 
 ---
 
