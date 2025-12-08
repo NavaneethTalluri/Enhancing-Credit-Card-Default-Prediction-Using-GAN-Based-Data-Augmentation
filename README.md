@@ -82,17 +82,6 @@ The results demonstrate how advanced resampling strategies can improve model gen
 ### LGBM Performance Across Augmented Datasets  
 ![LGBM Dataset Comparison](lgbm_dataset_performance_comparison.png)
 
----
-
-## Key Insights
-
-- CTGAN-generated data provides more realistic synthetic samples than SMOTE, effectively capturing complex feature relationships in tabular credit data.
-
-- LightGBM consistently delivers the strongest overall performance, achieving high accuracy and AUC, making it well-suited for financial risk prediction.
-
-- SMOTE improves the detection of minority classes (defaulters) but may slightly reduce overall model accuracy due to oversampling artefacts.
-
-- Data augmentation and balancing methods enhance fairness and recall for defaulters while maintaining generalisation across models.
 
 ---
 
