@@ -53,13 +53,21 @@ The results demonstrate how advanced resampling strategies can improve model gen
 ---
 
 ## Results Summary
-
+### Model Performance Comparison
 | **Model**               | **Accuracy** | **Precision** | **Recall** | **F1-score** | **AUC**    |
 |------------------------|--------------|---------------|------------|--------------|------------|
 | LightGBM               | **0.8170**   | 0.6562        | 0.3625     | 0.4670       | **0.7752** |
 | XGBoost                | 0.8118       | 0.6289        | 0.3640     | 0.4611       | 0.7565     |
 | Random Forest          | 0.8107       | 0.6262        | 0.3572     | 0.4549       | 0.7504     |
 | Logistic Regression    | 0.8060       | **0.6601**    | 0.2532     | 0.3660       | 0.7327     |
+
+### LGBM Model performance comparison original dataset vs smote vs CTGAN
+| **Model**           | **Dataset** | **Accuracy** | **Precision** | **Recall** | **F1-score** | **AUC**    |
+|--------------------|-------------|--------------|---------------|------------|--------------|------------|
+| LightGBM (Tuned)    | CTGAN       | 0.7683       | 0.4812        | 0.6081     | 0.5373       | 0.7755     |
+| LightGBM (Tuned)    | Original    | 0.7622       | 0.4716        | 0.6247     | 0.5374       | **0.7798** |
+| LightGBM (Tuned)    | SMOTE       | **0.7895**   | **0.5242**    | 0.5222     | 0.5232       | 0.7696     |
+
 
 ---
 
