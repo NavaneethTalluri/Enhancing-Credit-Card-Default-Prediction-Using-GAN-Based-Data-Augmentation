@@ -50,45 +50,39 @@ The results demonstrate how advanced resampling strategies can improve model gen
 
 ## Results Summary
 
-| **Model**               | **Dataset** | **Accuracy** | **AUC**    |
-| ----------------------- | ----------- | ------------ | ---------- |
-| **LightGBM**            | Original    | 0.8170       | **0.7752** |
-| **LightGBM**            | SMOTE       | 0.8122       | 0.7727     |
-| **LightGBM**            | GAN (CTGAN) | **0.8185**   | 0.7723     |
-| **XGBoost**             | Original    | 0.8118       | 0.7565     |
-| **XGBoost**             | SMOTE       | 0.7992       | 0.7517     |
-| **XGBoost**             | GAN (CTGAN) | **0.8118**   | **0.7604** |
-| **Random Forest**       | Original    | 0.8107       | 0.7504     |
-| **Random Forest**       | SMOTE       | 0.7907       | **0.7528** |
-| **Random Forest**       | GAN (CTGAN) | **0.8138**   | 0.7516     |
-| **Logistic Regression** | Original    | 0.8060       | 0.7327     |
-| **Logistic Regression** | SMOTE       | 0.7172       | 0.7222     |
-| **Logistic Regression** | GAN (CTGAN) | **0.8035**   | **0.7353** |
+| **Model**               | **Accuracy** | **Precision** | **Recall** | **F1-score** | **AUC**    |
+|------------------------|--------------|---------------|------------|--------------|------------|
+| LightGBM               | **0.8170**   | 0.6562        | 0.3625     | 0.4670       | **0.7752** |
+| XGBoost                | 0.8118       | 0.6289        | 0.3640     | 0.4611       | 0.7565     |
+| Random Forest          | 0.8107       | 0.6262        | 0.3572     | 0.4549       | 0.7504     |
+| Logistic Regression    | 0.8060       | **0.6601**    | 0.2532     | 0.3660       | 0.7327     |
+
 
 ---
 
 ### **Key Insights**
 
-- **LightGBM** achieved the **highest accuracy (0.8185)** and **AUC (0.7723)** using GAN-augmented data.
+- **LightGBM** delivered the strongest overall performance, achieving the highest Accuracy **(0.8170)** and AUC **(0.7752)** among all models.
 
-- **GAN (CTGAN)** consistently improved model stability and generalization compared to SMOTE and Original datasets.
+- **XGBoost**, **Random Forest**, and **Logistic Regression** showed slightly lower but comparable results, indicating stable performance across ensemble and linear methods.
 
-- **SMOTE** helped balance classes but led to slightly lower AUC due to oversampling artifacts.
+- Precision was highest in Logistic Regression **(0.6601)**, suggesting it made more reliable positive predictions despite lower recall.
 
-- **Logistic Regression** gained meaningful improvement with GAN, confirming the realistic diversity of synthetic samples.
+- Performance differences across models remain moderate, indicating no extreme overfitting or instability; however, LightGBM remains the most effective choice for this dataset.
 
 ---
 
 ## Visual Results
 
-### ROC Curve Comparison
-| Dataset | File |
-|----------|------|
-| Original | `roc_comparison_original.png` |
-| SMOTE | `roc_comparison_smote.png` |
-| GAN | `roc_comparison_gan.png` |
+### Model Performance on Original Dataset  
+![Unbalanced Results](model_performance_metrics_unbalanced.png)
 
-Each ROC curve demonstrates that tree-based ensemble models outperform linear classifiers, with CTGAN providing the most stable balance between performance and class fairness.
+### LGBM Performance Across Augmented Datasets  
+![LGBM Dataset Comparison](lgbm_dataset_performance_comparison.png)
+
+### ROC Curve Comparison  
+![ROC Curves](roc_comparison_original.png)
+
 
 ---
 
@@ -108,17 +102,19 @@ This project is released under the MIT License.
 
 ## Project Structure
 ```
-credit_default_prediction/
+Enhancing_Credit_Card_Default_Prediction_Using_GAN_Based_Data_Augmentation_/
 │
-├── Data_Science_Project_23102357.ipynb     # Main Jupyter Notebook (model training, EDA & results)
-├── LICENSE
-├── README.md                               # Project summary and documentation
-├── combined_model_results.csv              # Model performance comparison table
-├── ctgan_model.pkl                         # Saved CTGAN model for synthetic data generation
-├── default of credit card clients.xls      # Original dataset (UCI source)
-├── requirements.txt                        # Python dependencies for reproducibility
-├── roc_comparison_original.png             # ROC curve for Original dataset
-├── roc_comparison_smote.png                # ROC curve for SMOTE dataset
-└── roc_comparison_gan.png                  
+├── Enhancing_Credit_Card_Default_Prediction_Using_GAN_Based_Data_Augmentation_.ipynb   # Main Jupyter Notebook (EDA, GAN training & evaluation)
+├── README.md                                                                            # Project documentation & visual results
+├── LICENSE                                                                              # License for open-source usage
+│
+├── default of credit card clients.xls                                                  # Original dataset (UCI Credit Default dataset)
+├── ctgan_model.pkl                                                                      # Trained CTGAN model for synthetic sample generation
+├── requirements.txt                                                                     # Package dependencies for full reproducibility
+│
+├── model_performance_metrics_unbalanced.png                                            # Baseline performance on original dataset
+├── lgbm_dataset_performance_comparison.png                                             # Original vs SMOTE vs GAN comparison
+├── roc_comparison_original.png                                                         # ROC curves showing model discrimination ability
+                
 
 ```
